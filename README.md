@@ -42,5 +42,5 @@ cov = np.dot(X.T, X) / X.shape[0]
 > 正则化 Regularization  通过控制神经网络的容量防止过拟合
 ---
 ## Q&A
-> Imagenet比赛中兴起的神经网络模型
-Resnet、Alexnet、VGG、Inception
+#### Imagenet比赛中兴起的神经网络模型  
+    Resnet、Alexnet、VGG、Inception
