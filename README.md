@@ -29,11 +29,13 @@
 > 数据预处理
 - 均值减法  `X -= np.mean(X, axis=0)` 对于图像 `X -= np.mean(X)`
 - 归一化(Normalization)  将数据的所有维度都归一化，使其取值范围都近似相等  
-1. 先做零中心化，然后 `X /= np.std(X, axis=0)`
-2. 对每个维度进行归一化处理，使每个维度的最大值和最小值是1和-1
-- PCA和白化(Whitening)  先对数据进行零中心化处理，然后计算协方差矩阵
-	X -= np.mean(X, axis=0)
-	cov = np.dot(X.T, X) / X.shape[0]
+    1. 先做零中心化，然后 `X /= np.std(X, axis=0)`
+    2. 对每个维度进行归一化处理，使每个维度的最大值和最小值是1和-1
+- PCA和白化(Whitening)  先对数据进行零中心化处理，然后计算协方差矩阵  
+```python
+X -= np.mean(X, axis=0)
+cov = np.dot(X.T, X) / X.shape[0]
+```
 > 权重初始化
 `w = np.rando.rand(n) * sqrt(2.0/n)`
 - 批量归一化（Batch Normalization）全连接层或卷积层与激活函数之间添加一个BatchNorm层，可以理解为在网络的每一层之前都做预处理
